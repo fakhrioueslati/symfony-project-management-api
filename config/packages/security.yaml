@@ -1,0 +1,30 @@
+security:
+    password_hashers:
+        App\Entity\User:
+            algorithm: bcrypt
+
+    firewalls:
+        public:
+            pattern: ^/api/register|^/api/login|^/api/logout
+            security: false
+            
+            
+
+        api:
+            pattern: ^/api  
+            stateless: true 
+            jwt: ~ 
+            provider: app_user_provider 
+            
+
+    providers:
+        app_user_provider:
+            entity:
+                class: App\Entity\User
+                property: email  
+
+    access_control:
+        - { path: ^/api/register, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/api/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }  
+        - { path: ^/api, roles: IS_AUTHENTICATED_FULLY } 
+
