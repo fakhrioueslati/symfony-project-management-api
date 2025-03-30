@@ -6,7 +6,8 @@ This backend API, built with Symfony, is designed for managing projects, tasks, 
 - Project Management (Create, update, assign, and delete projects)- Task Management (Tasks within projects, assignments, and tracking)
 - Comment System (Users can add comments to tasks) 
 - Role-Based Access Control (Project owners, managers, and assigned members)
-- Database Management with Doctrine ORM (Efficient data handling) - Data Validation (Ensuring data integrity and validation before saving to the database)
+- Database Management with Doctrine ORM (Efficient data handling)
+- Data Validation (Ensuring data integrity and validation before saving to the database)
 
 
 ## Requirements
